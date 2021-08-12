@@ -7,7 +7,7 @@
         </div>
         <div class="cardbody">
             <form action="{{ url('insert-category') }}" method="POST" enctype="multipart/form-data">
-
+                @csrf
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="">Name</label>
