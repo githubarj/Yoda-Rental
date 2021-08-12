@@ -17,6 +17,12 @@
             </a>
           </li>
           <li class="nav-item ">
+            <a class="nav-link" href="{{  url('add-category') }}">
+              <i class="material-icons">person</i>
+              <p>Add Category</p>
+            </a>
+          </li>
+          <li class="nav-item ">
             <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
               <p>Table List</p>

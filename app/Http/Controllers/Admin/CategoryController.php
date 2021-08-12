@@ -23,8 +23,8 @@ class CategoryController extends Controller
         {
             $file = $request->file('image');
             $ext =$file->getClientOriginalExtension();
-            $filename = time()-'-'-$ext;
-            $file->move('assets/uploads/category'.$filename);
+            $filename = time().'.'.$ext;
+            $file->move('assets/uploads/category' ,$filename);
             $category->image = $filename;
         }
 
@@ -35,7 +35,7 @@ class CategoryController extends Controller
         $category->popular = $request->input('popular') == TRUE ? '1':'0';
         $category->meta_title = $request->input('meta_title');
         $category->meta_keywords = $request->input('meta_keywords');
-        $category->meta_descrip = $request->input('meta_description');
+        $category->meta_descrip = $request->input('meta_descrip');
         $category->save();
         return redirect('/dashboard')->with('status', "Category Added Succesfully");
         
