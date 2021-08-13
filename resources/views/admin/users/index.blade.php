@@ -22,10 +22,9 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->name }}</td>
-                            <td>{{ $item->category->email }}</td>
+                            <td>{{ $item->email }}</td>
                             <td>
-                                <a href="{{ url('edit-product/'.$item->id) }}" class="btn btn-pimary btn-sm">Edit</a>
-                                <a href="{{ url('delete-product/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="{{ url('view-user/'.$item->id) }}" class="btn btn-pimary btn-sm">View</a>
                             </td>
                         </tr>
                     @endforeach

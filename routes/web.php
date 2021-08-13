@@ -39,6 +39,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
 
     Route::get('users', [DashboardController::class, 'users']);
+    Route::get('view-user/{id}', [DashboardController::class, 'viewusers']);
+    
     });
 
 
