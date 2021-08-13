@@ -63,9 +63,10 @@ class CategoryController extends Controller
             $file = $request->file('image');
             $ext =$file->getClientOriginalExtension();
             $filename = time().'.'.$ext;
-            $file->move('assets/uploads/category' ,$filename);
+            $file->move('assets/uploads/category/' ,$filename);
             $category->image = $filename;
         }
+        
         $category->name = $request->input('name');
         $category->slug = $request->input('slug');
         $category->description = $request->input('description');
@@ -74,7 +75,7 @@ class CategoryController extends Controller
         $category->meta_title = $request->input('meta_title');
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_descrip = $request->input('meta_descrip');
-        $category->update;
+        $category->update();
         return redirect('dashboard')->with('status', "Category updated successfully");
     }
     public function destroy($id)

@@ -25,13 +25,13 @@
           <li class="nav-item {{ Request::is('products') ? 'active':''}} ">
             <a class="nav-link" href="{{  url('products') }}">
               <i class="material-icons">person</i>
-              <p>Products</p>
+              <p>Vehicles</p>
             </a>
           </li>
           <li class="nav-item {{ Request::is('add-products') ? 'active':''}} ">
             <a class="nav-link" href="{{  url('add-products') }}">
               <i class="material-icons">person</i>
-              <p>Add Products</p>
+              <p>Add Vehicle</p>
             </a>
           </li>
           <li class="nav-item ">
