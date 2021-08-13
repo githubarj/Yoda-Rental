@@ -4,7 +4,7 @@
     </IfModule>
     Options +FollowSymlinks
     RewriteEngine On
-    RewriteBase C:\laragon\www
+    
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
