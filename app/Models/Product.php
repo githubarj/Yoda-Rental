@@ -12,6 +12,7 @@ class Product extends Model
     protected $fillable =[
         'cate_id',
         'name',
+        'slug',
         'numberplate',
         'small_description',
         'description',
@@ -26,4 +27,8 @@ class Product extends Model
         'meta_keywords',
         'meta_description',
     ];
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'cate_id','id');
+    }
 }
