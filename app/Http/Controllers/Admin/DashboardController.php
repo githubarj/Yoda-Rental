@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\User;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 
 class DashboardController extends Controller
 {
@@ -12,5 +13,10 @@ class DashboardController extends Controller
     {
         $users = User::all();
         return view('admin.users.index', compact('users'));
+    }
+    public function viewusers($id)
+    {
+        $users = User::find($id);
+        return view('admin.users.view', compact('users'));
     }
 }

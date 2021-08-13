@@ -4,12 +4,12 @@
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item {{ Request::is('dashboard') ? 'active':''}} ">
+          <!-- <li class="nav-item {{ Request::is('dashboard') ? 'active':''}} ">
             <a class="nav-link" href="./dashboard.html">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item {{ Request::is('categories') ? 'active':''}} ">
             <a class="nav-link" href="{{  url('categories') }}">
               <i class="material-icons">person</i>
@@ -34,10 +34,10 @@
               <p>Add Vehicle</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+          <li class="nav-item {{ Request::is('users') ? 'active':''}}">
+            <a class="nav-link" href="{{  url('users') }}">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Users</p>
             </a>
           </li>
  
