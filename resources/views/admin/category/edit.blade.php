@@ -7,8 +7,8 @@
         </div>
         <div class="cardbody">
             <form action="{{ url('update-category/'.$category->id) }}" method="POST" enctype="multipart/form-data">
-                @csrf
                 @method('PUT')
+                @csrf
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="">Name</label>
@@ -24,11 +24,11 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Status</label>
-                        <input type="checkbox" {{$category->status == 1 ? 'cheked':''}} name="status">
+                        <input type="checkbox" {{$category->status == "1" ? 'cheked':''}} name="status">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Popular</label>
-                        <input type="checkbox"  {{$category->popular == 1 ? 'cheked':''}}  name="popular">
+                        <input type="checkbox"  {{$category->popular == "1" ? 'cheked':''}} name="popular">
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Title</label>
@@ -45,7 +45,7 @@
                         <textarea name="meta_descrip"  rows="3" class="form-control">{{ $category->meta_descrip }}</textarea>
                     </div>
                     @if($category->image)
-                        <img src="{{ asset('assets/upload/category/'.$category->image) }}" alt="Category image">
+                        <img src="{{ asset('assets/uploads/category/'.$category->image) }}" alt="">
                     @endif
                     <div class="col-md-12">
                         <input type="file" class="form-control" name='image'>

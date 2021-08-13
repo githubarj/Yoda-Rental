@@ -6,80 +6,81 @@
             <h4>Add Vehicle</h4>
         </div>
         <div class="cardbody">
-            <form action="{{ url('insert-product') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('update-product/'.$products->id) }}" method="POST" enctype="multipart/form-data">
+                @method('PUT')
                 @csrf
                 <div class="row">
                     <div class="col-md-12">
-                        <select class="form-select" name="cate_id">
-                            <option value="">Select a category</option>
-                            @foreach ($category as $item)
-                            <option value="{{ $item->id }}">{{ $item->name }}</option>
-                            @endforeach
+                        <select class="form-select">
+                            <option value="">{{ $products->category->name }}</option>
                         </select>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Name</label>
-                        <input type="text" class="form-control" name='name'>
+                        <input type="text" class="form-control" value= "{{ $products->name }}" name='name'>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Slug</label>
-                        <input type="text" class="form-control" name='slug'>
+                        <input type="text" class="form-control" value= "{{ $products->slug }}" name='slug'>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Number Plate</label>
-                        <input type="text" class="form-control" name='numberplate'>
+                        <input type="text" class="form-control" value= "{{ $products->numberplate }}" name='numberplate'>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Small Description</label>
-                        <textarea name="small_description"  rows="3" class="form-control"></textarea>
+                        <textarea name="small_description"  rows="3" class="form-control" >{{ $products->small_description }}</textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Description</label>
-                        <textarea name="description"  rows="3" class="form-control"></textarea>
+                        <textarea name="description"  rows="3" class="form-control" >{{ $products->description }}</textarea>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Car Purchhase price</label>
-                        <input type="number" class="form-control" name="original_price">
+                        <input type="number" class="form-control" value= "{{ $products->original_price }}" name="original_price">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Price per day</label>
-                        <input type="number" class="form-control" name="selling_price">
+                        <input type="number" class="form-control" value= "{{ $products->selling_price }}" name="selling_price">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Quantity</label>
-                        <input type="number" class="form-control" name="qty">
+                        <input type="number" class="form-control" value= "{{ $products->qty }}" name="qty">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Car Wash Price</label>
-                        <input type="number" class="form-control" name="tax">
+                        <input type="number" class="form-control" value= "{{ $products->tax }}" name="tax">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Status</label>
-                        <input type="checkbox" name="status">
+                        <input type="checkbox" {{ $products->status == "1" ? 'checked':''}} name="status">
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Trending</label>
-                        <input type="checkbox" name="trending">
+                        <input type="checkbox" {{ $products->trending == "1" ? 'checked':''}} name="trending">
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Title</label>
-                        <input type="text" class="form-control" name='meta_title'>
+                        <input type="text" class="form-control" value= "{{ $products->meta_title }}" name='meta_title'>
                     </div>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Keywords</label>
-                        <textarea name="meta_keywords"  rows="3" class="form-control"></textarea>
+                        <textarea name="meta_keywords"  rows="3" class="form-control">{{ $products->meta_keywords }}</textarea>
                     </div>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Description</label>
-                        <textarea name="meta_description"  rows="3" class="form-control"></textarea>
+                        <textarea name="meta_description"  rows="3" class="form-control">{{ $products->meta_description }}</textarea>
                     </div>
+                    @if($products->image)
+                        <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="">
+                    @endif
                     <div class="col-md-12">
                         <input type="file" class="form-control" name='image'>
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                 </div>
             </form>
