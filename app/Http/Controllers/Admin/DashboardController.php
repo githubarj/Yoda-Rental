@@ -19,4 +19,10 @@ class DashboardController extends Controller
         $users = User::find($id);
         return view('admin.users.view', compact('users'));
     }
+    public function destroy($id)
+    {
+        $users = User::find($id);
+        $users->delete();
+        return redirect('users')->with('status', "user deleted successfully");
+    }
 }

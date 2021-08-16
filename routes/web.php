@@ -5,18 +5,24 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\DashboardController;
-
-
-
-
+use App\Http\Controllers\EmailsController;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/email', function(){
+    Mail::to('jeremygithuba@icloud.com')->send(new WelcomeMail());
+    return new WelcomeMail();
+});
+
+//Route::get('/email', [EmailsController::class, 'email']);
 
 
 
@@ -40,6 +46,7 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewusers']);
+    Route::get('delete-user/{id}', [DashboardController::class, 'destroy']);
     
     });
 
