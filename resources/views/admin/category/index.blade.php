@@ -3,7 +3,9 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h4>Category Page</h4>
+            <h4>Category Page
+            <a href="{{ url('add-category') }}" class="btn btn-primary btn-sm float-right">Add New Category</a>
+            </h4>
             <hr>
         </div>
         <div class="cardbody">

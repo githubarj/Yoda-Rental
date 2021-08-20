@@ -3,7 +3,10 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h4>Add Vehicle</h4>
+            <h4>Add Vehicle
+            <a href="{{ url('products') }}" class="btn btn-primary btn-sm float-right">Back</a>
+            </h4>
+            <hr>
         </div>
         <div class="cardbody">
             <form action="{{ url('insert-product') }}" method="POST" enctype="multipart/form-data">
