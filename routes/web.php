@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Mail;
 //     return view('welcome');
 // });
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('category', [FrontendController::class, 'category']);
 
 Auth::routes(['verify' => true]);
 
