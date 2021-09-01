@@ -76,7 +76,7 @@ class CategoryController extends Controller
         $category->meta_keywords = $request->input('meta_keywords');
         $category->meta_descrip = $request->input('meta_descrip');
         $category->update();
-        return redirect('dashboard')->with('status', "Category updated successfully");
+        return redirect('categories')->with('status', "Category updated successfully");
     }
     public function destroy($id)
     {

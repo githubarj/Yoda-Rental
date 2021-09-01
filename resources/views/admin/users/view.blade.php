@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-4 mb-3 ">
                         <td>
-                                <a href="{{ url('edit-product/'.$users->id) }}" class="btn btn-pimary btn-sm">Edit</a>
+                                <a href="{{ url('edit-user/'.$users->id) }}" class="btn btn-pimary btn-sm">Edit</a>
                                 <a href="{{ url('delete-user/'.$users->id) }}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                         </div>

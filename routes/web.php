@@ -46,6 +46,8 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('users', [DashboardController::class, 'users']);
     Route::get('view-user/{id}', [DashboardController::class, 'viewusers']);
+    Route::get('edit-user/{id}', [DashboardController::class, 'editusers']);
+    Route::put('update-user/{id}', [DashboardController::class, 'update']);
     Route::get('delete-user/{id}', [DashboardController::class, 'destroy']);
     
     });
