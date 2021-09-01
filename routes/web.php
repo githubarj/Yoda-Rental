@@ -3,15 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\EmailsController;
 use App\Mail\WelcomeMail;
 use Illuminate\Support\Facades\Mail;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [FrontendController::class, 'index']);
 
 Auth::routes(['verify' => true]);
 

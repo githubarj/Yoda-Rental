@@ -6,13 +6,13 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{ asset('asset/images/mazda.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{asset('assets/images/2331915x1280x720_FFFFFF_L_0.jpg')}}" class="d-block w-50" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('asset/images/gti.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{asset('assets/images/2331915x1280x720_FFFFFF_L_0.jpg')}}" class="d-block w-50" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('asset/images/1628744884.jpg') }}" class="d-block w-100" alt="...">
+      <img src="{{asset('assets/images/2331915x1280x720_FFFFFF_L_0.jpg')}}" class="d-block w-50" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -23,4 +23,4 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div> 
+</div>
