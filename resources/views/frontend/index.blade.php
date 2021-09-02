@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title')
-    Welcome to Tuzuru car booking service 
+    Welcome to Tuzuru 
 @endsection
 
 @section('content')
@@ -35,15 +35,17 @@
                 <div class="owl-carousel featured-carousel owl-theme">
                     @foreach ($trending_category as $tcategory)
                         <div class="item">
-                            <div class="card">
-                                <img src="{{ asset('assets/uploads/category/'.$tcategory->image) }}" alt="car image">
-                                <div class="card-body">
-                                    <h5>{{ $tcategory->name }}</h5>
-                                    <P>
-                                        {{ $tcategory->description}}
-                                    </P>
+                            <a href="{{ url('view-category/'.$tcategory->slug)}}">
+                                <div class="card">
+                                    <img src="{{ asset('assets/uploads/category/'.$tcategory->image) }}" alt="car image">
+                                    <div class="card-body">
+                                        <h5>{{ $tcategory->name }}</h5>
+                                        <P>
+                                            {{ $tcategory->description}}
+                                        </P>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
