@@ -53,6 +53,13 @@
                     </div>
                 </div>
             </div>
+            <hr>
+            <h2 class="mb-0">
+                Description
+            </h2>
+            <p class="mt-3">
+                {!! $products->description !!}
+            </p>
         </div>
     </div>
 </div>
