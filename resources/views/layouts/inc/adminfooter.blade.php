@@ -29,7 +29,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://github.com/githubarj/Yoda-Rental" target="_blank">Richard Githuba and Cassey Mosses</a>
+            <a href="https://github.com/githubarj/Yoda-Rental" target="_blank">Richard Githuba</a>
           </div>
         </div>
       </footer>

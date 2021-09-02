@@ -47,8 +47,8 @@
                         </div>
                         <div class="col-md-10">
                             <br/>
-                            <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist</button>
-                            <button type="button" class="btn btn-success me-3 float-start">Book This Vihecle</button>
+                            <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist <i class="fa fa-heart"></i></button>
+                            <button type="button" class="btn btn-primary me-3 float-start">Book This Vehicle <i class="fa fa-key"></i></button>
                         </div>
                     </div>
                 </div>
